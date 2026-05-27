@@ -8,14 +8,20 @@
 
 import { initialCards } from "./cards.js";
 import { createCardElement, deleteCard, likeCard } from "./components/card.js";
-import { openModalWindow, closeModalWindow, setCloseModalWindowEventListeners } from "./components/modal.js";
+import {
+  openModalWindow,
+  closeModalWindow,
+  setCloseModalWindowEventListeners,
+} from "./components/modal.js";
 
 // DOM узлы
 const placesWrap = document.querySelector(".places__list");
 const profileFormModalWindow = document.querySelector(".popup_type_edit");
 const profileForm = profileFormModalWindow.querySelector(".popup__form");
 const profileTitleInput = profileForm.querySelector(".popup__input_type_name");
-const profileDescriptionInput = profileForm.querySelector(".popup__input_type_description");
+const profileDescriptionInput = profileForm.querySelector(
+  ".popup__input_type_description",
+);
 
 const cardFormModalWindow = document.querySelector(".popup_type_new-card");
 const cardForm = cardFormModalWindow.querySelector(".popup__form");
@@ -69,8 +75,8 @@ const handleCardFormSubmit = (evt) => {
         onPreviewPicture: handlePreviewPicture,
         onLikeIcon: likeCard,
         onDeleteCard: deleteCard,
-      }
-    )
+      },
+    ),
   );
 
   closeModalWindow(cardFormModalWindow);
@@ -104,7 +110,7 @@ initialCards.forEach((data) => {
       onPreviewPicture: handlePreviewPicture,
       onLikeIcon: likeCard,
       onDeleteCard: deleteCard,
-    })
+    }),
   );
 });
 
